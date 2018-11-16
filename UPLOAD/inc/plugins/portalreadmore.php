@@ -35,7 +35,7 @@ function portalreadmore_info()
 		"author"		=>	"SvePu",
 		"authorsite"	=> 	"https://github.com/SvePu",
 		"codename"		=>	"portalreadmore",
-		"version"		=>	"1.3",
+		"version"		=>	"1.3.1",
 		"compatibility"	=>	"18*"
 	);
 	
@@ -67,7 +67,7 @@ function portalreadmore_activate()
 	
 	$query = $db->simple_select("settinggroups", "gid", "name='portal'");
 	$gid = $db->fetch_field($query, "gid");
-	$query_add = $db->simple_select("settings", "COUNT(*) as rows", "gid='{$gid}'");
+	$query_add = $db->simple_select("settings", "COUNT(*) as `rows`", "gid='{$gid}'");
 	$rows = $db->fetch_field($query_add, "rows");
 	
 	$setting = array(
